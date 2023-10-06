@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Membuat Aplikasi Toko Dengan Java - BELAJAR</title>
+    <meta name="description" content="Membuat Aplikasi Toko Dengan Java, , , , , , , 0, , , , , , 0, membuat-aplikasi-toko-dengan-java, BELAJAR" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Membuat Aplikasi Toko Dengan Java - BELAJAR" />
+    <meta property="og:description" content="Membuat Aplikasi Toko Dengan Java, , , , , , , 0, , , , , , 0, membuat-aplikasi-toko-dengan-java, BELAJAR" />
+    <meta property="og:site_name" content="BELAJAR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Membuat Aplikasi Toko Dengan Java - BELAJAR" />
+    <meta name="twitter:description" content="Membuat Aplikasi Toko Dengan Java, , , , , , , 0, , , , , , 0, membuat-aplikasi-toko-dengan-java, BELAJAR" />
+    <link rel='stylesheet' id='generate-style-css' href='https://kelasbelajar.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://kelasbelajar.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://kelasbelajar.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://kelasbelajar.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://kelasbelajar.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://kelasbelajar.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://kelasbelajar.github.io">Home</a></li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2"><a
+                            href="https://kelasbelajar.github.io/page/dmca.html">DMCA</a></li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3"><a
+                            href="https://kelasbelajar.github.io/page/privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://kelasbelajar.github.io" rel="home"> BELAJAR</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Membuat Aplikasi Toko Dengan Java</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">Pakyong</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Membuat+Aplikasi+Toko+Dengan+Java" alt="Membuat Aplikasi Toko Dengan Java">
+                    </div>
+                    <p></p>
+                    <p>Coding Membuat aplikasi dari java</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#coding-membuat-aplikasi-dari-java">1.
+                                            Coding Membuat aplikasi dari java</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#cara-membuat-program-aplikasi-calculator-dengan-java-netbeans-ide">2.
+                                            cara membuat program aplikasi  calculator dengan java netbeans IDE</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-cara-membuat-aplikasi-java-dengan-netbeans-7-0-1-untuk-pemula">3.
+                                            jelaskan cara membuat aplikasi Java dengan netbeans 7.0.1 untuk pemula ???</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#java-buatlah-program-java-untuk-mensimulasikan-penggunaan-semua-constructor-method-yang-ada-di-class-java-util-linkedlist-%e2%80%8b">4.
+                                            (Java) Buatlah program java untuk mensimulasikan penggunaan semua constructor method yang ada di class java.util.LinkedList.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#dengan-cara-apakah-mudah-membuat-aplikasi-berbasis-visual-grafis-tanpa-harus-melakukan-coding-dari-awal-menggunakan-platform-java-programming%e2%80%8b">5.
+                                            Dengan cara apakah mudah membuat aplikasi berbasis visual grafis tanpa harus melakukan coding dari awal menggunakan platform Java programming​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#syarat%c2%b2-untuk-membuat-paket-aplikasi-java-sederhana-menjadi-sebuah-paket-installer-mohon-di-jawab-karna-mau-di-kumpul-cepat%e2%80%8b">6.
+                                            Syarat² untuk membuat paket aplikasi java sederhana menjadi sebuah paket installer. mohon di jawab karna mau di kumpul cepat​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bahasa-pemrograman-yang-bukan-bertujuan-khusus-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-assembly-membuat-aplikasi-pemrograman-mesind-c">7.
+                                            Bahasa pemrograman yang bukan bertujuan khusus : *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. Assembly (membuat aplikasi pemrograman mesin)
+D. C. C++, JAVA, C#, PYTHON</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#saya-mau-tanya-apa-manfaat-aplikasi-java-dan-captivate">8.
+                                            saya mau tanya apa manfaat aplikasi java dan captivate?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-membuat-window-dengan-java-atau-bahasa-pemrograman-java">9.
+                                            Bagaimana cara membuat window dengan Java atau ? Bahasa pemrograman Java</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#membuat-tabel-java-netbeans">10.
+                                            membuat tabel java netbeans</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-script-dengan-java-script-membuat-messagebox-pada-tombol-submit">11.
+                                            buatlah script dengan java script membuat messagebox pada tombol submit !!</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#7-3jelaskan-fungsi-dari-fitur-library-pada-aplikasi-javanetbeans-jelaskan-fungsi-dari-my-sql-driver-pada-aplikasi-javanetbeans-sebuthean-minimal3-jenis-jenis-gul-yg-digunakanmembuat-program-interfa">12.
+                                            7.3"Jelaskan Fungsi dari Fitur library pada aplikasi JavaNetbeans ?Jelaskan fungsi dari my SQL driver pada aplikasi JavaNetbeans ?Sebuthean minimal3 Jenis-Jenis Gul yg digunakanmembuat program interface menggunakan java?J Panel J scrollpanel, dan / Toolbar merupakan kelompoledari ?Jelaskan fungsi dari komponen yg ferdapat pada soalnomor 4?Jawab.​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-java-memiliki-framework-yang-dapat-digunakan-untuk-membangun-aplikasi-dengan-menerapkan-konsep-mvc">13.
+                                            apakah java memiliki framework yang dapat digunakan untuk membangun aplikasi dengan menerapkan konsep mvc?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apakah-ada-aplikasi-brainly-untk-hp-java-kalo-ada-tolong-dimana-link-downloadnya">14.
+                                            Apakah ada aplikasi brainly untk hp java ? Kalo ada tolong, dimana link downloadnya.</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#program-aplikasi-pascal-dan-java-berfungsi-sebagai-pemrograman">15.
+                                            program aplikasi pascal dan java  berfungsi sebagai...... pemrograman</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pada-saat-anda-membangun-aplikasi-berbasis-java-hal-yg-harus-dihindari-adalah">16.
+                                            Pada saat anda membangun aplikasi berbasis java hal yg harus dihindari adalah??</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#java-dirancang-untuk-menghasilkan-aplikasi-aplikasi-dengan-performansi-yang-terbaik-sepertiaplikasi%e2%80%8b">17.
+                                            Java dirancang untuk menghasilkan aplikasi-aplikasi dengan performansi yang terbaik sepertiaplikasi:​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#syarat-untuk-membuat-class-pada-java">18.
+                                            syarat untuk membuat class pada java</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#membuat-program-java-persegi-bintang%e2%80%8b">19.
+                                            Membuat Program Java Persegi Bintang​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-membuat-sebuah-class-dalam-java">20.
+                                            Bagaimana membuat sebuah class dalam java</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#lebih-baik-darimana-jika-kita-ingin-bisa-menguasai-bahasa-pemrograman-untuk-sebuah-aplikasi-dan-game-java-php-apakah-harus-belajar-html-dan-css-terlebih-dahulu-ataukah-langsung-ke-java-dan-php">21.
+                                            lebih baik darimana jika kita ingin bisa menguasai bahasa pemrograman untuk sebuah aplikasi dan game java, php, apakah harus belajar html dan css terlebih dahulu ataukah langsung ke java dan php?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-aplikasi-yang-di-buat-dengan-bahasa-pemrograman-php-java-javascript-swiftmohon-dibantu-kaka-%e2%80%8b">22.
+                                            contoh aplikasi yang di buat dengan bahasa pemrograman php, java, javascript, swift?mohon dibantu kaka :)​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#kalau-kita-mau-buat-aplikasi-administrasi-lebih-baik-pake-php-html-vb-atau-java">23.
+                                            kalau kita mau buat aplikasi administrasi lebih baik pake PHP, HTML, VB, atau Java..???</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#program-aplikasi-yang-memiliki-format-java-dan-html">24.
+                                            Program aplikasi yang memiliki format Java dan HTML</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tujuan-pembuatan-java-applet">25.
+                                            tujuan pembuatan Java applet</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bagaimana-cara-buat-aplikasi-kalkulator-menggunakan-java-tolong-di-jawab%e2%80%8b">26.
+                                            bagaimana cara buat aplikasi kalkulator menggunakan Java.tolong di Jawab​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#mengapa-aplikasi-kasir-banyak-yang-menggunakan-java-dekstop-dari-pada-web6">27.
+                                            mengapa aplikasi kasir banyak yang menggunakan java dekstop dari pada web6</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pada-saat-anda-membangun-aplikasi-berbasis-java-hal-yg-harus-dihindari-adalah">28.
+                                            pada saat anda membangun aplikasi berbasis java hal yg harus dihindari adalah??</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#5-aplikasi-java-serta-penjelasannya">29.
+                                            5 aplikasi java serta penjelasannya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#bahasa-pemrograman-yang-bertujuan-umum-dan-digunakan-untuk-berbagai-aplikasi-yaitu-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-c-c-java">30.
+                                            Bahasa pemrograman yang bertujuan umum dan digunakan untuk berbagai aplikasi yaitu ... *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. C. C++, JAVA, C#, PYTHON
+D. Assembly (membuat aplikasi pemrograman mesin)</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#program-yang-membuat-java-applet-dan-dieksekusi-menggunakan-java-runtime-environment-sehingga-memungkinkan-halaman-web-bisa-berinteraksi-adalah">31.
+                                            Program yang membuat Java applet, dan dieksekusi menggunakan Java Runtime Environment sehingga memungkinkan halaman web bisa berinteraksi, adalah</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-saja-kebutuhan-untuk-membuat-program-java">32.
+                                            apa saja kebutuhan untuk membuat program java ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#gimana-ya-cara-bikin-aplikasi-android-dengan-program-java">33.
+                                            gimana ya cara bikin aplikasi android dengan program java</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#aplikasi-browser-yang-tersedia-dalam-platform-java-yaitu%e2%80%8b">34.
+                                            aplikasi browser yang tersedia dalam platform Java yaitu​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#salah-satu-jenis-aplikasi-berbasis-pemograman-java-yang-dapat-digunakan-untuk-membuat-anime-game-adalah%e2%80%8b">35.
+                                            salah satu jenis aplikasi berbasis pemograman java yang dapat digunakan untuk membuat anime game adalah​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pada-saat-anda-membangun-aplikasi-berbasis-java-hal-hal-yang-harus-di-hindari-adalah-pilihannya-ada-di-gambar%e2%80%8b">36.
+                                            pada saat anda membangun aplikasi berbasis  Java , hal hal yang harus di hindari adalah.. ( pilihannya ada di gambar)​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#aplikasi-berbasis-web-sederhana-hello-word-java-eclipse-play-framework">37.
+                                            Aplikasi berbasis web sederhana hello word java eclipse play framework</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tugas-3-persiapan-type-data-variabel-dan-operator1-apa-saja-yang-diperlukan-dalam-membuat-program-aplikasi-menggunakan-bahasa-java-jelaskan2-jabarkan-apa-yang-dimaksud-dengan-jdk-java-devel">38.
+                                            Tugas 3, Persiapan, Type Data, Variabel dan Operator
+1. Apa saja yang diperlukan dalam membuat program aplikasi menggunakan bahasa java?, jelaskan!
+2. Jabarkan apa yang dimaksud dengan JDK (Java Development Kit) dan JRE (Java Runtime Environtment) dan apa perbedaannya!
+3. Jabarkan apa yang dimaksud dengan JVM (Java Virtual Machine) dan apa fungsinya!
+4. Jabarkan type-type data apa saja yang dikenal dalam bahasa program Java dan jelaskan pula jangkauannya!
+5. Jabarkan apa yang dimaksud dengan Variable!
+6. Jabarkan apa yang dimaksud dengan operator dalam java dan sebutkan macamnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#program-java-sdk-dibuat-oleh">39.
+                                            program java SDK dibuat oleh</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-class-dan-obyek-handphone-dalam-java">40.
+                                            Buatlah Class dan obyek handphone dalam java</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="coding-membuat-aplikasi-dari-java">
+                            1. Coding Membuat aplikasi dari java</h2><br />
+                        menentukan bilangan ganjil genap:<br />/*<br /> * To change this license header, choose License Headers in Project Properties.<br /> * To change this template file, choose Tools | Templates<br /> * and open the template in the editor.<br /> */<br />package ganjil.genap;<br /><br />import java.util.Scanner;<br /><br />/**<br /> *<br /> * @author GUNAWAN<br /> */<br />public class GanjilGenap {<br /><br />    /**<br />     * @param args the command line arguments<br />     */<br />    public static void main(String[] args) {<br />        // TODO code application logic here<br />   int a,cek;<br />        Scanner data = new Scanner (System.in);<br />        System.out.print("Masukan angka yang ingin dicek:");<br />        a = data.nextInt();<br />        <br />        if (a%2==0){<br />            System.out.println(a+" adalah bilangan GENAP");<br />        }<br />        else{<br />            System.out.println(a+" adalah bilangan GANJIL");<br />        }<br />        <br />    }<br />    <br />}<br /><br /><br /><br />
+                                            <h2 class="ez-toc-section" id="cara-membuat-program-aplikasi-calculator-dengan-java-netbeans-ide">
+                            2. cara membuat program aplikasi  calculator dengan java netbeans IDE</h2><br />
+                        semuanya bermula pada pemrograman GUI pada java gan..<br /><br />komponennya yaitu menggunakan java swing, dan event handlernya menggunakan java action eventIni :<br />- penjumlahan. Kalo buat pengurangan, kali smaa bagi juga sama, tinggal ganti tanda + nya aja :)<br />public class Coba3 {<br />        public static void main (String [] args) {<br />        Integer a=1;<br />        Integer b=2;<br />        Integer c=a+b;<br />        System.out.print("" + a + "+" + b + "=" +c);<br />    }<br />}<br /><br /><br />- Ini yg perpangkatan<br />public class Coba7 {<br />    public static void main (String[] args) {<br />       Integer a=2;//variable a<br />       Integer b=5;<br />       Integer c=(int)Math.pow(a, b);<br />       System.out.println(+ a + " pangkat " + b + " = " + c);<br />           }<br />}<br /><br />- Ini yg untuk akar pangkat<br />public class Coba8 {<br />     public static void main (String[] args) {<br />       Integer a=16;//variable a<br />       Integer b=(int)Math.sqrt(a);<br />       System.out.println("akar pangkat " + a + " = " + b);          <br />    }<br />}<br /><br />Semoga membantu ya... :)<br />
+                                            <h2 class="ez-toc-section" id="jelaskan-cara-membuat-aplikasi-java-dengan-netbeans-7-0-1-untuk-pemula">
+                            3. jelaskan cara membuat aplikasi Java dengan netbeans 7.0.1 untuk pemula ???</h2><br />
+                        maaf saya bukan user netbeans namun saya lumayan di eclipse ... nah di eclips kita bisa belajar dengan mudah tanpa harus mengetik sesuai huruf karena eclipse sudah di masukkan support followingbtext jadibgak usah ragu salah script .,<br /><br /><br />nah untuk pemula biasanya akan di ajarkan script dasar berupa operator, nah di dalam operator juga terdapat operator aritmatika (matematika) ,perbandingan ,sampai logika(gerbang logika),<br /><br />contoh<br /><br />int a=1<br />int b=2<br />int c=a+b<br /><br />System.out.print(a + "+" + b + "=" + c);<br /><br /><br /><br /><br />maka hasilnya<br />_______________<br /><br />1 + 2 = 3<br />
+                                            <h2 class="ez-toc-section" id="java-buatlah-program-java-untuk-mensimulasikan-penggunaan-semua-constructor-method-yang-ada-di-class-java-util-linkedlist-%e2%80%8b">
+                            4. (Java) Buatlah program java untuk mensimulasikan penggunaan semua constructor method yang ada di class java.util.LinkedList.​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Ini hanya contoh yaa:</p><p>import java.util.LinkedList;</p><p></p><p>public class LinkedListConstructorExample {</p><p>    public static void main(String[] args) {</p><p>        // Constructor 1: LinkedList()</p><p>        LinkedList&lt;String&gt; linkedList1 = new LinkedList&lt;String&gt;();</p><p>        linkedList1.add("Apple");</p><p>        linkedList1.add("Banana");</p><p>        linkedList1.add("Cherry");</p><p>        System.out.println("LinkedList 1: " + linkedList1);</p><p></p><p>        // Constructor 2: LinkedList(Collection&lt;? extends E&gt; c)</p><p>        LinkedList&lt;String&gt; linkedList2 = new LinkedList&lt;String&gt;(linkedList1);</p><p>        System.out.println("LinkedList 2: " + linkedList2);</p><p></p><p>        // Constructor 3: LinkedList(E[] array)</p><p>        String[] array = {"Grape", "Orange", "Pear"};</p><p>        LinkedList&lt;String&gt; linkedList3 = new LinkedList&lt;String&gt;(array);</p><p>        System.out.println("LinkedList 3: " + linkedList3);</p><p></p><p>        // Constructor 4: LinkedList(int initialCapacity)</p><p>        LinkedList&lt;String&gt; linkedList4 = new LinkedList&lt;String&gt;();</p><p>        linkedList4.add("Lemon");</p><p>        linkedList4.add("Mango");</p><p>        linkedList4.add("Pineapple");</p><p>        LinkedList&lt;String&gt; linkedList5 = new LinkedList&lt;String&gt;(10);</p><p>        linkedList5.addAll(linkedList4);</p><p>        System.out.println("LinkedList 5: " + linkedList5);</p><p>    }</p><p>}</p><p></p><p>Output: </p><p>LinkedList 1: [Apple, Banana, Cherry]</p><p>LinkedList 2: [Apple, Banana, Cherry]</p><p>LinkedList 3: [Grape, Orange, Pear]</p><p>LinkedList 5: [Lemon, Mango, Pineapple]</p><p></p><p><strong>Penjelasan:</strong></p>Constructor 1: LinkedList() digunakan untuk membuat linked list kosong.Constructor 2: LinkedList(Collection&lt;? extends E&gt; c) digunakan untuk membuat linked list yang berisi elemen-elemen dari koleksi yang diberikan.Constructor 3: LinkedList(E[] array) digunakan untuk membuat linked list yang berisi elemen-elemen dari array yang diberikan.Constructor 4: LinkedList(int initialCapacity) digunakan untuk membuat linked list dengan kapasitas awal yang diberikan.<br />
+                                            <h2 class="ez-toc-section" id="dengan-cara-apakah-mudah-membuat-aplikasi-berbasis-visual-grafis-tanpa-harus-melakukan-coding-dari-awal-menggunakan-platform-java-programming%e2%80%8b">
+                            5. Dengan cara apakah mudah membuat aplikasi berbasis visual grafis tanpa harus melakukan coding dari awal menggunakan platform Java programming​</h2><br />
+                        <p>Jawaban:</p><p></p><p>Penjelasan:</p><p>dengan Cara apakah mudah membuat aplikasi berbasis visual grafis tanpa harus melakukan coding dari awal menggunakan platform java programming</p><br />
+                                            <h2 class="ez-toc-section" id="syarat%c2%b2-untuk-membuat-paket-aplikasi-java-sederhana-menjadi-sebuah-paket-installer-mohon-di-jawab-karna-mau-di-kumpul-cepat%e2%80%8b">
+                            6. Syarat² untuk membuat paket aplikasi java sederhana menjadi sebuah paket installer. mohon di jawab karna mau di kumpul cepat​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>maaf saya tidak tahu maaf sekali lagi yaaa saya juga tidak paham </p><br />
+                                            <h2 class="ez-toc-section" id="bahasa-pemrograman-yang-bukan-bertujuan-khusus-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-assembly-membuat-aplikasi-pemrograman-mesind-c">
+                            7. Bahasa pemrograman yang bukan bertujuan khusus : *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. Assembly (membuat aplikasi pemrograman mesin)
+D. C. C++, JAVA, C#, PYTHON</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>a. prolog (membuat aplikasi kecerdasan buatan)</p><br />
+                                            <h2 class="ez-toc-section" id="saya-mau-tanya-apa-manfaat-aplikasi-java-dan-captivate">
+                            8. saya mau tanya apa manfaat aplikasi java dan captivate?</h2><br />
+                        Manfaat Aplikasi Java yaitu Multiplatform dimana kita dapat menjalankan aplikasi java di linux windows juga handphone <br /><br />Manfaat Aplikasi Captivate adalah sebagai media presentasi sama seperti Powerpoint tapi Captivate lebih interaktif <br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-membuat-window-dengan-java-atau-bahasa-pemrograman-java">
+                            9. Bagaimana cara membuat window dengan Java atau ? Bahasa pemrograman Java</h2><br />
+                        <p>Kalau cara yg saya tau bisa pakai Command prompt atau Visual studio Code.</p><p></p><p>Kalau Command prompt pertama harus save file pakai .java lalu ke command prompt ketik </p><p></p><p>cd desktop java namafile.java</p><p></p><p>dan kalau visual studio code, download di google dlu lalu buka file yang sudah pakai .java, dan download java dlu di visual studio nya</p><p></p><p>kurang tau detailnya</p><p></p><p>Lalu baru mulai, tapi kalau pakai Command prompt kurang enak, lebih baik cek youtube karena kalau dijelaskan di sini susah untuk mengerti dan jelasinya.</p><br />
+                                            <h2 class="ez-toc-section" id="membuat-tabel-java-netbeans">
+                            10. membuat tabel java netbeans</h2><br />
+                        Membuat JTable dengan GUI<br />Untuk membuat JTable melalui GUI, kita dapat menambahkan komponen JTable pada workspace Netbeans. Buat interface <br />interface Pada kolom tabel, definisikan 4 kolom yang datanya ingin ditampilkan yaitu dengan cara klik kanan JTable - Pilih Table Contents,kolom tabel Sedangkan untuk barisnya, pilih 0 karena defaultnya belum ada data yang ditampilkan <br />baris tabel<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="buatlah-script-dengan-java-script-membuat-messagebox-pada-tombol-submit">
+                            11. buatlah script dengan java script membuat messagebox pada tombol submit !!</h2><br />
+                        &lt;html&gt;<br />&lt;head&gt;<br />&lt;script type="text/javascript"&gt;<br />function pesan() { alert("ISI POIN"); } ------&gt; misalnya ("data ditemukan").<br />&lt;/script&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />&lt;form&gt;<br />&lt;input type="button" value = "ISI POIN" onclick ="pesan()" /&gt;<br />&lt;/form&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="7-3jelaskan-fungsi-dari-fitur-library-pada-aplikasi-javanetbeans-jelaskan-fungsi-dari-my-sql-driver-pada-aplikasi-javanetbeans-sebuthean-minimal3-jenis-jenis-gul-yg-digunakanmembuat-program-interfa">
+                            12. 7.3"Jelaskan Fungsi dari Fitur library pada aplikasi JavaNetbeans ?Jelaskan fungsi dari my SQL driver pada aplikasi JavaNetbeans ?Sebuthean minimal3 Jenis-Jenis Gul yg digunakanmembuat program interface menggunakan java?J Panel J scrollpanel, dan / Toolbar merupakan kelompoledari ?Jelaskan fungsi dari komponen yg ferdapat pada soalnomor 4?Jawab.​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Untuk Mengatasi PUYENG !!!!</p><br />
+                                            <h2 class="ez-toc-section" id="apakah-java-memiliki-framework-yang-dapat-digunakan-untuk-membangun-aplikasi-dengan-menerapkan-konsep-mvc">
+                            13. apakah java memiliki framework yang dapat digunakan untuk membangun aplikasi dengan menerapkan konsep mvc?</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>................................... </p><p></p><p><strong>Penjelasan:</strong></p><p><strong>gak</strong><strong> </strong><strong>tau</strong><strong> </strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="apakah-ada-aplikasi-brainly-untk-hp-java-kalo-ada-tolong-dimana-link-downloadnya">
+                            14. Apakah ada aplikasi brainly untk hp java ? Kalo ada tolong, dimana link downloadnya.</h2><br />
+                        <strong>Tidak ada kalau aplikasinya..</strong><br /><strong>Lewat web saja </strong><br /><strong>Link : Brainly.co.id</strong><strong>tidak ada kalau aplikasinya</strong><br /><br />
+                                            <h2 class="ez-toc-section" id="program-aplikasi-pascal-dan-java-berfungsi-sebagai-pemrograman">
+                            15. program aplikasi pascal dan java  berfungsi sebagai...... pemrograman</h2><br />
+                        Berfungsi sebagai <strong>Bahasa Pemrograman</strong><br /><br />Semoga Membantu!<br /><br />
+                                            <h2 class="ez-toc-section" id="pada-saat-anda-membangun-aplikasi-berbasis-java-hal-yg-harus-dihindari-adalah">
+                            16. Pada saat anda membangun aplikasi berbasis java hal yg harus dihindari adalah??</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>10. d. Untuk menampilkan keluaran class dengan syntax javac</p><p><strong>Penjelasan:</strong></p><p>javac adalah Java Compiler untuk mengcompile file program Java (jawaban yang e.)</p><br />
+                                            <h2 class="ez-toc-section" id="java-dirancang-untuk-menghasilkan-aplikasi-aplikasi-dengan-performansi-yang-terbaik-sepertiaplikasi%e2%80%8b">
+                            17. Java dirancang untuk menghasilkan aplikasi-aplikasi dengan performansi yang terbaik sepertiaplikasi:​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>database Oracle 8i/9i yang core-nya dibangun menggunakan bahasa pemrograman Java.</p><p></p><p><strong>~</strong><strong>T</strong><strong>i</strong><strong>k</strong><strong>a</strong><strong>S</strong><strong>a</strong><strong>n</strong><strong>s</strong></p><br />
+                                            <h2 class="ez-toc-section" id="syarat-untuk-membuat-class-pada-java">
+                            18. syarat untuk membuat class pada java</h2><br />
+                        <p>Syarat untuk membuat class pada java :</p><p>-. Memiliki Variabel dan object</p><p>-. Dapat dipanggil di kelas lain</p><br />
+                                            <h2 class="ez-toc-section" id="membuat-program-java-persegi-bintang%e2%80%8b">
+                            19. Membuat Program Java Persegi Bintang​</h2><br />
+                        <p>public class Segitiga {</p><p>  public static void main(String[] args) {</p><p>    // Dimensi segitiga</p><p>    int tinggi = 5;</p><p></p><p>    // Looping untuk menampilkan baris</p><p>    for (int i = 0; i &lt; tinggi; i++) {</p><p>      // Looping untuk menampilkan kolom</p><p>      for (int j = 0; j &lt; tinggi * 2 - 1; j++) {</p><p>        // Jika kolom kurang dari atau sama dengan baris</p><p>        if (j &gt;= tinggi - i - 1 &amp;&amp; j &lt;= tinggi + i - 1) {</p><p>          // Tampilkan karakter '*'</p><p>          System.out.print("*");</p><p>        } else {</p><p>          // Jika tidak, tampilkan karakter spasi</p><p>          System.out.print(" ");</p><p>        }</p><p>      }</p><p></p><p>      // Pindah ke baris selanjutnya</p><p>      System.out.println();</p><p>    }</p><p>  }</p><p>}</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="bagaimana-membuat-sebuah-class-dalam-java">
+                            20. Bagaimana membuat sebuah class dalam java</h2><br />
+                        pembuatan class sepeda<br />public class Sepeda<br /> {     int gigi;  <br />   String merk;     <br />     //konstruktor     public Sepeda()<br />{      this.gigi=0;         this.merk="Federal";     }    <br /> public Sepeda(int g, String m){         this.gigi = g;         this.merk = m;     }    <br />     public void setGigi(int g){         this.gigi=g;     }   <br />  public void setMerk(String m){         this.merk = m;             }  <br />   public int getGigi(){         return this.gigi;     }   <br />  public String getMerk(){         return this.merk;     }      <br />   public void berjalan(){         System.out.println("Sepeda Berjalan");             }   <br />  public void belokKiri(){         System.out.println("Sepeda Belok Kiri");             }     public void belokKanan(){         System.out.println("Sepeda Belok Kanan");      <br />       }<br /> }<br />
+                                            <h2 class="ez-toc-section" id="lebih-baik-darimana-jika-kita-ingin-bisa-menguasai-bahasa-pemrograman-untuk-sebuah-aplikasi-dan-game-java-php-apakah-harus-belajar-html-dan-css-terlebih-dahulu-ataukah-langsung-ke-java-dan-php">
+                            21. lebih baik darimana jika kita ingin bisa menguasai bahasa pemrograman untuk sebuah aplikasi dan game java, php, apakah harus belajar html dan css terlebih dahulu ataukah langsung ke java dan php?​</h2><br />
+                        <p>langsung aja Java sama PHP. HTML dan CSS mah buat membangun tampilan visual dalam sebuah aplikasi web.</p><br />
+                                            <h2 class="ez-toc-section" id="contoh-aplikasi-yang-di-buat-dengan-bahasa-pemrograman-php-java-javascript-swiftmohon-dibantu-kaka-%e2%80%8b">
+                            22. contoh aplikasi yang di buat dengan bahasa pemrograman php, java, javascript, swift?mohon dibantu kaka :)​</h2><br />
+                        <p><strong>Penjelasan:</strong></p>atomsublime text an writer<p>Kalo mau belajar di bootstrap aja </p><br />
+                                            <h2 class="ez-toc-section" id="kalau-kita-mau-buat-aplikasi-administrasi-lebih-baik-pake-php-html-vb-atau-java">
+                            23. kalau kita mau buat aplikasi administrasi lebih baik pake PHP, HTML, VB, atau Java..???</h2><br />
+                        <p>Tergantung pada pihak pemohon/ client. tetapi, jika ingin belajar membuat aplikasi bersifat programming dasar, maka disarankan menggunakan <strong>PHP+HTML</strong> dan <strong>VB.</strong> Karena dua bahasa ini bisa di-implementasikan bagi yang belum mengenal metode OOP(Object Oriented Programming/Program berbasis Objek).</p><br />
+                                            <h2 class="ez-toc-section" id="program-aplikasi-yang-memiliki-format-java-dan-html">
+                            24. Program aplikasi yang memiliki format Java dan HTML</h2><br />
+                        itu menggunakan aplikasi teks editor..<br /><br />bisa pakai adobe dreamweaver, sublime text, notepad++<br />
+                                            <h2 class="ez-toc-section" id="tujuan-pembuatan-java-applet">
+                            25. tujuan pembuatan Java applet</h2><br />
+                        Java Applet merupakan program Java yang berjalan di atas brow-ser. Dengan menggunakan Java Applet, maka halaman HTML akan lebih dinamis dan menarik, sangat cocok untuk pengem-bangan aplikasi-aplikasi berbasis web.<br />
+                                            <h2 class="ez-toc-section" id="bagaimana-cara-buat-aplikasi-kalkulator-menggunakan-java-tolong-di-jawab%e2%80%8b">
+                            26. bagaimana cara buat aplikasi kalkulator menggunakan Java.tolong di Jawab​</h2><br />
+                        <p><strong>Jawaban:</strong></p>Buka aplikasi NetbeansPilih menu file – new projectPilih kategori java – java applicationMasukan nama project, misalnya : KalkulatorGUIKlik next maka project berhasil dibuat.Selanjutnya pada project tersebut, klik kanan pilih new<br />
+                                            <h2 class="ez-toc-section" id="mengapa-aplikasi-kasir-banyak-yang-menggunakan-java-dekstop-dari-pada-web6">
+                            27. mengapa aplikasi kasir banyak yang menggunakan java dekstop dari pada web6</h2><br />
+                        <strong>[jawaban]<br /></strong><strong><br />Mata Pelajaran: Teknologi Informatika<br /></strong><strong>Kata kunci: Aplikasi<br /></strong><strong><br />• Jawaban pendek:<br /><br /></strong>Mengapa aplikasi kasir banyak yang menggunakan java dekstop dari pada web<br /><br /><strong>Karena dengan menggunakan aplikasi Java Dekstop, kasir dapat menggunakan aplikasi tersebut pada komputer secara offline tanpa koneksi internet, dimana dapat lebih efisien dan fleksibel.</strong><br />
+                                            <h2 class="ez-toc-section" id="pada-saat-anda-membangun-aplikasi-berbasis-java-hal-yg-harus-dihindari-adalah">
+                            28. pada saat anda membangun aplikasi berbasis java hal yg harus dihindari adalah??</h2><br />
+                        <p><strong>Jawaban:</strong></p><p><strong>1).Ingin cepat bisa</strong></p><p><strong>2).Ingin menguasai bahasa pemograman</strong></p><p><strong>3).Memulai dari materi yang sulit </strong></p><p><strong>4).Mempelajari materi yang kadaluarsa</strong></p><p><strong>5).Menghafal dan bukan memahami</strong></p><p><strong></strong></p><p><strong>Penjelasan:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="5-aplikasi-java-serta-penjelasannya">
+                            29. 5 aplikasi java serta penjelasannya</h2><br />
+                        1). Aplikasi bawaan oracle<br />2). Aplikasi pada handphone non-OS seperti pada seri - seri handphone era 2000-an<br />3). Aplikasi dan juga game's pada handphone ber-OS seperti, Symbian, Android, dan juga Windows Phone.<br />4). Beberapa aplikasi pada komputer dan PC Desktop.<br />
+                                            <h2 class="ez-toc-section" id="bahasa-pemrograman-yang-bertujuan-umum-dan-digunakan-untuk-berbagai-aplikasi-yaitu-a-prolog-membuat-aplikasi-kecerdasan-buatanb-cobol-dan-fortran-membuat-aplikasi-simulasic-c-c-java">
+                            30. Bahasa pemrograman yang bertujuan umum dan digunakan untuk berbagai aplikasi yaitu ... *
+A. Prolog (membuat aplikasi kecerdasan buatan)
+B. Cobol dan Fortran (membuat aplikasi simulasi)
+C. C. C++, JAVA, C#, PYTHON
+D. Assembly (membuat aplikasi pemrograman mesin)</h2><br />
+                        <p><strong>Jawaban</strong><strong>:</strong></p><p>C. C, C++, Java, C#, Python.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="program-yang-membuat-java-applet-dan-dieksekusi-menggunakan-java-runtime-environment-sehingga-memungkinkan-halaman-web-bisa-berinteraksi-adalah">
+                            31. Program yang membuat Java applet, dan dieksekusi menggunakan Java Runtime Environment sehingga memungkinkan halaman web bisa berinteraksi, adalah</h2><br />
+                        maaf saya kurang tauuu<br />
+                                            <h2 class="ez-toc-section" id="apa-saja-kebutuhan-untuk-membuat-program-java">
+                            32. apa saja kebutuhan untuk membuat program java ?</h2><br />
+                        Secara Umum dan sudah saya sederhanakan<br /><br />Basic<br />1. Pengetahuan dasar pemrograman(khususnya java)<br />2. Pengetahuan tentang OOP(Object Oriented Programming)<br />3. Installer Java<br />4. konfigurasi kompiler java atau<br />5. IDE(Integrated Development Environtment) contoh Netbeans<br /><br />Untuk membuat Program sistem informasi<br />1. menguasai minimal 1 program database contoh MySql<br />2. menguasai program report contoh Crystal Report<br />3. Mengetahui cara mengintegrasi program2 tersebut melalu JDBC(java database connectivity)<br />Untuk membuat Program Enterprise base<br />1. Menguasai konsep MVC(Model View Controller)<br />2. Menguasai paling tidak framework terkait MVC contoh struts,spring dll<br /><br /><br /><br />
+                                            <h2 class="ez-toc-section" id="gimana-ya-cara-bikin-aplikasi-android-dengan-program-java">
+                            33. gimana ya cara bikin aplikasi android dengan program java</h2><br />
+                        dengan membaca dan belajar mengikuti petunjuk untuk membuat aplikasi android, banyak tutorial di internet/google atau bisa jg mengikuti website android, untuk tools nya ada android studio bisa download di android web<br />
+                                            <h2 class="ez-toc-section" id="aplikasi-browser-yang-tersedia-dalam-platform-java-yaitu%e2%80%8b">
+                            34. aplikasi browser yang tersedia dalam platform Java yaitu​</h2><br />
+                        <p><strong>Penjelasan:</strong></p><p></p><p><strong>Platform Java</strong> adalah seperangkat program yang memfasilitasi mengembangkan dan menjalankan program yang ditulis dalam Java bahasa pemrograman. </p><p></p><p>BEBERAPA APK NYA</p><p></p>Java CardJava ME (Micro Edition):Java SE (Standard Edition)Java EE (Enterprise Edition<br />
+                                            <h2 class="ez-toc-section" id="salah-satu-jenis-aplikasi-berbasis-pemograman-java-yang-dapat-digunakan-untuk-membuat-anime-game-adalah%e2%80%8b">
+                            35. salah satu jenis aplikasi berbasis pemograman java yang dapat digunakan untuk membuat anime game adalah​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Ardor3D</p><p>Ardor3D merupakan game engine open source berbasis Java dan didukung dengan OpenGL. Dengan menggunakan game engine ini, pembaca akan lebih mudah membuat game 3D android.</p><p></p><p>2. Mesin Android GL (ANGLE)</p><p>anglelogo</p><p></p><p>ANGLE merupakan mesin game open source berbasis Java, dan penggunaannya lebih fokus dalam pengembangan game 2D. Dengan dukungan OpenGL ES dan tutorial seri yang didokumentasikan lengkap dapat mempercepat pembaca dalam mengembangkan game 2D android.</p><p></p><p>3. Box2D</p><p>Box2D dikembangkan dengan C ++ dan under source. Mesin game ini berbasis Java dan dapat membantu pembaca dalam membuat game yang berbasis fisik layaknya game Angry Birds. Dengan dukungan seri tutorial dan dokumentasi manual yang disediakan akan lebih mudah memahami API yang diberikan. Jika pembaca kesulitan, mereka juga menyediakan forum untuk membahas masalah pada game engine ini.</p><p></p><p>4. AndEngine</p><p>AndEngine merupakan mesin permainan open source berbasis Java. Juga didukung dengan OpenGL yang digunakan untuk membuat game 2D android. Mesin game ini telah banyak digunakan pada banyak game seperti Save The Earth, Xelorians, Man vs Mosquito dan masih banyak yang lainnya. Jika pemahaman memahami APInya, pembaca akan dibantu dengan blog dan forum yang tersedia.</p><p></p><p>5. Platform AllBinary</p><p>AllBinary Platform adalah game engine open source berbasis Java. Dan didukung OpenGL ES yang dapat digunakan untuk pengembangan game 3D android. Contoh game android yang menggunakan game engine ini adalah ZeptoRacer 3D.</p><p></p><p>6. Loon</p><p>Loon juga dikenal dengan LGame merupakan mesin game open source berbasis Java yang fokus digunakan untuk pengembangan game 2D android. Ada banyak contoh game yang bisa dibaca dan disusun.</p><p></p><p>7. JPCT-AE</p><p>Jika pembaca belum akrab dengan JPCT, pembaca harus mengetahuinya. JPCT-AE merupakan game engine open source berbasis Java yang digunakan pengembangan game 3D android dan juga mampu melakukan porting JPCT ke android. APInya juga mudah mempelajari, juga game engine ini mendukung OpenGL.</p><p></p><p>8. Cocos2D</p><p>cocos2d</p><p>Selain iPhone, Cocos2D juga mempunyai versi untuk Android. Mesin game open source ini berbasis Java dan bagus untuk pengembangan game 2D android. API yang digunakan juga sama dengan apa yang ada pada iPhone.</p><p></p><p>9. Kue kucing</p><p>catcake_motion</p><p>Catcake merupakan mesin game open source berbasis Java yang digunakan untuk pengembangan game 3D. Mudah digunakan, performa tinggi, juga didukung dengan fitur animasi, input deice handling, sound playing. Dan gamenya pun bisa lintas platform juga.</p><p></p><p>10. LibGDX</p><p>LibGDX  merupakan mesin game berbasis Java yang digunakan untuk pengembangan game java atau android berbasis OpenGL ES. Mesin game ini juga lintas platform, mesin game juga cocok untuk pengembangan game 2D maupun 3D android.</p><p></p><p>Mengembangkan game sulit jika menggunakan mesin game. Dengan 10 Game engine Java untuk android ini, semoga dapat mempercepat dan mempermudah pengembangan game android 2D maupun 3D. Semoga tambah menyenangkan yah bikin gamenya.</p><p><strong>Penjelasan:</strong></p><p>maaf kalau salah </p><br />
+                                            <h2 class="ez-toc-section" id="pada-saat-anda-membangun-aplikasi-berbasis-java-hal-hal-yang-harus-di-hindari-adalah-pilihannya-ada-di-gambar%e2%80%8b">
+                            36. pada saat anda membangun aplikasi berbasis  Java , hal hal yang harus di hindari adalah.. ( pilihannya ada di gambar)​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>d. Untuk menampilkan keluaran class dengan syntax javac</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="aplikasi-berbasis-web-sederhana-hello-word-java-eclipse-play-framework">
+                            37. Aplikasi berbasis web sederhana hello word java eclipse play framework</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>public class Main {
+</p><p>
+</p><p>	public Main() {
+</p><p>  System.out.println("Hello World");
+</p><p>	}
+</p><p>
+</p><p>	public static void main(String[] args) {
+</p><p>  new Main();
+</p><p>
+</p><p>	}
+</p><p>
+</p><p>}</p><p></p><p><strong>Penjelasan:</strong></p><p>Buatlah sebuah class bernama Main (m nya huruf besar)</p><p>di dalam class tersebut buatlah sebuah constructor yang berisikan perintah untuk melakukan print kata Hello World. </p><p>System.out.println("Hello World");</p><p></p><p>lalu pada method public static void main isikan dengan nama method consturctor nya. seperti pada contoh di atas</p><p>new Main();</p><p></p><p>setelah itu save dan compile code nya pada aplikasi eclipse dengan menekan tombol ctrl + s untuk save dan tombol f11 untuk compile</p><br />
+                                            <h2 class="ez-toc-section" id="tugas-3-persiapan-type-data-variabel-dan-operator1-apa-saja-yang-diperlukan-dalam-membuat-program-aplikasi-menggunakan-bahasa-java-jelaskan2-jabarkan-apa-yang-dimaksud-dengan-jdk-java-devel">
+                            38. Tugas 3, Persiapan, Type Data, Variabel dan Operator
+1. Apa saja yang diperlukan dalam membuat program aplikasi menggunakan bahasa java?, jelaskan!
+2. Jabarkan apa yang dimaksud dengan JDK (Java Development Kit) dan JRE (Java Runtime Environtment) dan apa perbedaannya!
+3. Jabarkan apa yang dimaksud dengan JVM (Java Virtual Machine) dan apa fungsinya!
+4. Jabarkan type-type data apa saja yang dikenal dalam bahasa program Java dan jelaskan pula jangkauannya!
+5. Jabarkan apa yang dimaksud dengan Variable!
+6. Jabarkan apa yang dimaksud dengan operator dalam java dan sebutkan macamnya</h2><br />
+                        1.Aplikasi Programmer<br />misalnya Microsoft Visual Studio,dll<br /><br />2. JDK (Java Development Kit)<br />JDK adalah Perangkat lunak yang digunakan untuk melakukan proses kompilasi dari kode java ke bytecode yang dapat dimengerti dan dapat dijalankan oleh JRE (Java Runtime Envirotment). JDK wajib terinstall pada komputer yang akan melakukan proses pembuatan aplikasi berbasis java, namun tidak wajib terinstall di komputer yang akan menjalankan aplikasi yang dibangun dengan java.<br /><br />JRE (Java Runtime Environment)<br />JRE adalah perangkat lunak yang digunakan untuk menjalankan aplikasi yang dibangun menggunakan java. Versi JRE harus sama atau lebih tinggi dengan JDK yang dugunakan untuk membangun aplikasi java.<br /><br />3.JVM :<br /><br />JVM (Java VIrtual Machine) adalah mechine abstract dengan spesifikasi tertentu yang menyediakan lingkungan untuk runtime untuk menjalankan bytecode dari Java (Apliksi yang dibuat dengan java). <br />JVM melakukan tugas-tugas utama sbb:<br />Membuka kode (Loads code)<br />Menferifikasi kode<br />Mengeksekusi kode<br />Menyediakan runtime environment<br />JRE<br /> digunakan untuk menyediakan lingkuran agar dapat mengeksukusi program yang terbuat dari Java. JRE menyediakan seperangkat libraries serta file lain yang digunakan JVM saat runtime atau dengan kata lain JRE merupakan implementasi dari JVM itu sendiri. Jika kita akan menggunakan program yang terbuat dari Java, maka JRE wajib terinstal terlebih dulu pada OS yang akan digunakan.<br /><br />4. Byte,short,public,class,static,void,long<br /><br />5. Variabel adalah suatu yang bersikap berubah-ubah dan tidak tetap. <br /><br />6. Operator adalah suatu simbol yang digunakan untuk memberikan perintah kepada komputer untuk melakukan aksi terhadap satu atau lebih operand. Operand sendiri adalah sesuatu yang dioperasikan oleh operator.<br />
+                                            <h2 class="ez-toc-section" id="program-java-sdk-dibuat-oleh">
+                            39. program java SDK dibuat oleh</h2><br />
+                        Dibuat oleh <strong>Oracle</strong> (dulu dibuat oleh Sun Microsystem, tetapi Sun Microsystem sekarang sudah diakuisisi oleh Oracle)<br />Semoga membantu...<br />
+                                            <h2 class="ez-toc-section" id="buatlah-class-dan-obyek-handphone-dalam-java">
+                            40. Buatlah Class dan obyek handphone dalam java</h2><br />
+                        <p>Class dan obyek handphone dalam java</p><p>Class Handphone</p><p>{</p><p>       public String tipe, layar, processor;</p><p>       public int internal, ram, baterai;</p><p>       void nyalakan()</p><p>       {</p><p>              system.out.println("handphone menyala"); </p><p>       }</p><p>       void matikan()</p><p>       {</p><p>              system.out.println("handphone mati"); </p><p>       }</p><p>}</p><br /><p>Handphone Samsung = new Handphone();</p><p>Samsung.tipe = "galaxy note";</p><p>Samsung.processor = "exynos";</p><p>Samsung.layar = "Super Amoled, 5,5 inch";</p><p>Samsung.internal = 32;</p><p>Samsung.ram = 2;</p><p>Samsung.baterai = 3200;</p><br /><p>Handphone Xiaomi= new Handphone();</p><p>Xiaomi.tipe = "redmi note";</p><p>Xiaomi.processor = "snapdragon";</p><p>Xiaomi.layar = "IPS, 5,5 inch";</p><p>Xiaomi.internal = 16;</p><p>Xiaomi.ram = 2;</p><p>Xiaomi.baterai = 3000;</p><br />Pembahasan<p>Di dalam dunia nyata, kita akan menemukan banyak object yang sifatnya</p><p>individual atau unik dalam suatu jenis yang sama. Di sekitar kita terdapat</p><p>berbagai macam hal, misalnya tiap handphone dibuat dengan jenis bagian-bagian yang sama, misalnya layar, processor, ram, baterai, dan lainnya.</p><p>Dalam konsep pemrograman berorientasi object, kita menyebut handphone yang  kita miliki sebagai object dari class handphone. Jadi class adalah kerangka  dari setiap object individual yang akan dibuat. Di dalam suatu class, terdapat attribut atau variabel dan method. Attribut atau variabel contohnya seperti layar, processor, dan lainnya.</p><p>Sedangkan method merupakan suatu operasi berupa fungsi-fungsi yang dapat dikerjakan oleh suatu object. Method yang didefinisikan pada class bisa dipanggil melalui object.</p><p>Method memiliki 4 (empat) bagian dasar :</p>Nama metodeKembalian yang dikembalikan setelah memanggil method.Input parameter.Badan atau isi method, berupa instruksi untuk melakukan sesuatu hal.<br />Pelajari lebih lanjut<p>soal membuat class dan object serupa https://brainly.co.id/tugas/18517447</p><br />Detil Jawaban<p><strong>Kelas </strong>: 10  </p><p><strong>Bab </strong>: Mengenal Pemrograman Komputer  </p><p><strong>Kata Kunci</strong> : pemrograman berbasis objek</p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>ti</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/tugas-daring-fiqih-kelas-9.html">Tugas Daring Fiqih Kelas 9</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/pengajuan-form-permintaan-barang.html">Pengajuan Form Permintaan Barang</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-ujian-sekolah-bahasa-inggris-kelas-36.html">Soal Ujian Sekolah Bahasa Inggris Kelas 36</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/sertifikasi-triwulan-3-2020-kapan-cair.html">Sertifikasi Triwulan 3 2020 Kapan Cair</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-hukum-kirchoff-1.html">Soal Un Hukum Kirchoff 1</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-ekonomi-2019-dan-kunci-jawaban.html">Soal Un Ekonomi 2019 Dan Kunci Jawaban</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-osn-ips-smp-2020-dan-kunci-jawaban.html">Soal Osn Ips Smp 2020 Dan Kunci Jawaban</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-hukum-ohm-sma.html">Soal Un Hukum Ohm Sma</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-geografi.html">Soal Un Geografi</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/contoh-soal-osn-ips-smp.html">Contoh Soal Osn Ips Smp</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-osn-dan-pembahasan-ipa-smp.html">Soal Osn Dan Pembahasan Ipa Smp</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-sd-2020.html">Soal Un Sd 2020</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-un-biologi-2019-dan-pembahasannya.html">Soal Un Biologi 2019 Dan Pembahasannya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/surat-permohonan-lamaran-kerja-tulis.html">Surat Permohonan Lamaran Kerja Tulis</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-ujian-sekolah-agama-islam-sd-kelas-6.html">Soal Ujian Sekolah Agama Islam Sd Kelas 6</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/surat-permohonan-fee-marketing.html">Surat Permohonan Fee Marketing</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/mengapa-harus-hemat-listrik-tema-4.html">Mengapa Harus Hemat Listrik Tema 4</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/cek-bantuan-bpjs-ketenagakerjaan-2020.html">Cek Bantuan Bpjs Ketenagakerjaan 2020</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/soal-sinonim.html">Soal Sinonim</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://kelasbelajar.github.io/contoh-soal-sinonim-bahasa-inggris.html">Contoh Soal Sinonim Bahasa Inggris</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://kelasbelajar.github.io"
+                            itemprop="url">BELAJAR</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://kelasbelajar.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://kelasbelajar.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://kelasbelajar.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://kelasbelajar.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+<script type='text/javascript' src='//cloudlessmajesty.com/1d/a7/d8/1da7d80839196eccc4a624ab91e5ccbf.js'></script>
+<script type='text/javascript' src='//cloudlessmajesty.com/8d/be/84/8dbe84c54b7cc5b78aa0e0a1fbdbae07.js'></script>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4777688,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4777688&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
